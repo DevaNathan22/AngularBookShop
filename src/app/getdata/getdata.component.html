@@ -1,0 +1,26 @@
+<p>getdata works!</p>
+
+<p><i><b>Books Table</b></i></p>
+<table *ngIf="bookshop.length>0">
+    <th>ID</th>
+    <th>Name</th>
+    <th>Author</th>
+    <th>Catagoery</th>
+    <th>Price</th>
+    <th>Tax</th>
+    <th>Discount</th>
+    <th>Total Price</th>
+
+    <tr *ngFor="let a of bookshop ;let i=index">
+       <td>{{i+1}}</td>
+       <td>{{a.name}}</td>
+       <td>{{a.author}}</td>
+       <td>{{a.catagoery}}</td>
+       <td>{{a.price}}</td>
+       <td>{{a.tax}}</td>
+       <td>{{a.discount}}</td>
+       <td>{{a.price+((a.price/100)*a.tax)-((a.price/100)*a.discount)}}</td>
+       </tr>
+
+</table>
+<H1  *ngIf="bookshop.length==0">NO DATA AVAILABLE</H1>
